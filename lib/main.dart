@@ -12,11 +12,12 @@ class Station {
   final String city;
   final String cityName;
 
-  Station(
-      {required this.code,
-      required this.name,
-      required this.city,
-      required this.cityName});
+  Station({
+    required this.code,
+    required this.name,
+    required this.city,
+    required this.cityName,
+  });
 
   factory Station.fromJson(Map<String, dynamic> json) {
     return Station(
@@ -32,23 +33,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KAI Booking',
+      title: 'Daftar Stasiun Kereta Api',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF002171),
+        accentColor: Color(0xFFF7941D),
+        fontFamily: 'Roboto',
       ),
-      home: BookingPage(),
+      home: StasiunKeretaApiPage(),
     );
   }
 }
 
-class BookingPage extends StatefulWidget {
+class StasiunKeretaApiPage extends StatefulWidget {
   @override
-  _BookingPageState createState() => _BookingPageState();
+  _StasiunKeretaApiPageState createState() => _StasiunKeretaApiPageState();
 }
 
-class _BookingPageState extends State<BookingPage> {
+class _StasiunKeretaApiPageState extends State<StasiunKeretaApiPage> {
   List<Station> stations = [];
   List<Station> filteredStations = [];
+  int currentNumber = 1;
 
   @override
   void initState() {
@@ -73,24 +77,55 @@ class _BookingPageState extends State<BookingPage> {
           station.city.toLowerCase().contains(query.toLowerCase()) ||
           station.cityName.toLowerCase().contains(query.toLowerCase());
     }).toList();
-    setState(() {});
+    setState(() {
+      currentNumber = 1;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('KAI Booking'),
+        title: Row(
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              margin: EdgeInsets.only(right: 8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Image.asset(
+                'assets/kai_logo.png',
+                width: 24,
+                height: 24,
+              ),
+            ),
+            Text(
+              'Daftar Stasiun Kereta Api',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: Color(0xFF002171),
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          Container(
+            padding: EdgeInsets.all(16.0),
             child: TextField(
               onChanged: (value) => filterStations(value),
               decoration: InputDecoration(
                 labelText: 'Search',
                 prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
               ),
             ),
           ),
@@ -98,11 +133,33 @@ class _BookingPageState extends State<BookingPage> {
             child: ListView.builder(
               itemCount: filteredStations.length,
               itemBuilder: (BuildContext context, int index) {
-                return Card(
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.0),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 4.0,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
                   child: ListTile(
-                    title: Text(filteredStations[index].name),
+                    title: Text(
+                      '${currentNumber++}. ${filteredStations[index].name}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
                     subtitle: Text(
-                        '${filteredStations[index].city}, ${filteredStations[index].cityName}'),
+                      '${filteredStations[index].city}, ${filteredStations[index].cityName}',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 );
               },
