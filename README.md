@@ -22,6 +22,6 @@ Aplikasi ini memungkinkan pengguna untuk mencari stasiun kereta api berdasarkan 
 ## Demo
 
 <div align="center">
-  <img src="https://github.com/AryaGunawann/API-Daftar-Stasiun-Kereta-Api/raw/main/assets/demo.png" alt="Demo Aplikasi" />
+  <img src="![demo_jV9mxSQf_AdobeExpress](https://github.com/AryaGunawann/API-Daftar-Stasiun-Kereta-Api/assets/113499162/a6c614f5-763b-48b9-a338-1bec7fe7de43)" alt="Demo Aplikasi" />
 </div>
 
