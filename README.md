@@ -1,16 +1,24 @@
-# daftarstasiun
+# Daftar Stasiun Kereta Api
 
-A new Flutter project.
+Aplikasi Flutter sederhana untuk mencari stasiun kereta api menggunakan data dari API KAI.
 
-## Getting Started
+## Deskripsi
 
-This project is a starting point for a Flutter application.
+Aplikasi ini memungkinkan pengguna untuk mencari stasiun kereta api berdasarkan nama, kota, atau nama kota. Data stasiun diperoleh dari API KAI yang menyediakan informasi stasiun-stasiun kereta api di Indonesia.
 
-A few resources to get you started if this is your first Flutter project:
+Fitur utama aplikasi:
+- Pencarian stasiun berdasarkan nama, kota, atau nama kota.
+- Menampilkan daftar stasiun dengan informasi lengkap seperti nama stasiun, kota, dan nama kota.
+- Tampilan yang responsif dan mudah digunakan.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Instalasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Pastikan Anda memiliki Flutter SDK terpasang. Untuk informasi lebih lanjut, silakan kunjungi [Flutter.dev](https://flutter.dev).
+2. Clone repositori ini ke komputer lokal Anda.
+3. Jalankan perintah `flutter pub get` untuk menginstal dependensi proyek.
+4. Jalankan perintah `flutter run` untuk menjalankan aplikasi.
+
+## Sumber Daya
+
+- API KAI untuk mendapatkan data stasiun. [API Stations2 KAI](https://booking.kai.id/api/stations2)
+- Flutter - Sebuah kerangka kerja pengembangan aplikasi mobile yang digunakan dalam proyek ini. Untuk informasi lebih lanjut, silakan kunjungi [Flutter.dev](https://flutter.dev).
