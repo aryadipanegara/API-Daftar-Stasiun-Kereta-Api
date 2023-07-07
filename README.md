@@ -22,5 +22,5 @@ Aplikasi ini memungkinkan pengguna untuk mencari stasiun kereta api berdasarkan 
 ## Demo
 
 <div align='center'>
-  <img src="./assets/demo_jVmxSQf.gif" width="300"/>
+  <img src="/assets/demo_jVmxSQf.gif" width="300"/>
 </div>
